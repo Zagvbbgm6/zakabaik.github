@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Happy National Girlfriend Day 💕</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Paper Airplane Animation -->
+  <div class="paper-airplane" id="paperAirplane">✈️</div>
+  <div class="airplane-message" id="airplaneMessage">
+    <p>Selamat datang Depina tersayang! 💕</p>
+    <button class="close-message" onclick="closeAirplaneMessage()">Tutup</button>
+  </div>
+
+  
+
+  <div class="container">
+    <div class="heart-animation">
+      <span class="heart">💖</span>
+      <span class="heart">💕</span>
+      <span class="heart">💝</span>
+    </div>
+
+    <h1 class="main-title">Happy National Girlfriend Day!</h1>
+    <h2 class="subtitle">Untuk Depina Tersayang 💕</h2>
+
+    <div class="message-box">
+      <div id="typewriterContainer" class="typewriter-container">
+        <p class="typewriter-text" id="currentText"></p>
+        <span class="cursor" id="cursor">|</span>
+      </div>
+
+      <div class="hidden-messages">
+        <p class="message">Hai depina! Happy National Girlfriend Day ya! 💕</p>
+        <p class="message">Maaf ya kalo aku telat bikin ini </p>
+        <p class="message">Aku bikin ini karena tiba tiba pengen buat aja</p>
+        <p class="message">Maafin ya kalo aku masih egois disetiap masalah</p>
+        <p class="message">Aku sedang berusaha bikin kamu seneng</p>
+        <p class="message">Dengan cara aku bisa bikin kamu seneng dengan caraku sendiri</p>
+        <p class="message">Oh iya tadi kamu bilang kamu capek ya hari ini? Tetep semangat ya!</p>
+        <p class="message">Aku akan selalu ada buat kamu</p>
+        <p class="message">Setiap pelukan yang kamu kasih ke aku, aku ingat selalu</p>
+        <p class="message">Karna kamu perempuan pertama yang mau meluk aku</p>
+        <p class="message">Dimanapun kamu butuh aku, I'm here for you cantik</p>
+        <p class="message">Because I love you so muchhhh! </p>
+        <p class="message">So much ya bukan muach wkwkwk </p>
+        <p class="message">Yaudah ah wkwkw sampe sini dulu bikinnya</p>
+        <p class="message">Maaf ya kalo aku ada salah hari ini</p>
+        <p class="message">Aku mau bilang ke kamu...</p>
+        <p class="message">Aku sayang kamu pake bangetttzzz! </p>
+        <p class="message">Dah ah papai! 👋</p>
+      </div>
+    </div>
+
+    <div class="music-controls">
+      <button id="playBtn" class="play-button">💕 Lanjut Pesan</button>
+      <iframe id="backgroundMusic" style="display: none;" width="0" height="0" 
+              src="https://www.youtube.com/embed/04mIaRtg73w?start=18&autoplay=1&loop=1&playlist=04mIaRtg73w&controls=0&mute=1" 
+              frameborder="0" allow="autoplay; encrypted-media">
+      </iframe>
+    </div>
+
+    <div class="question-section" id="questionSection">
+      <h2 class="question-title">Kamu sayang aku gak? 💕</h2>
+      <div class="answer-buttons">
+        <button class="answer-btn yes-btn" id="yesBtn" onclick="answerYes()">Yes! 💖</button>
+        <button class="answer-btn no-btn" id="noBtn" onclick="moveNoButton()">No</button>
+      </div>
+      <div class="final-message" id="finalMessage">
+        Aku juga sayang kamu banget Depina! 💕✨
+      </div>
+    </div>
+
+    <div class="love-meter">
+      <h3>Love Meter untuk Depina:</h3>
+      <div class="meter">
+        <div class="meter-fill" id="loveMeter"></div>
+      </div>
+      <p class="meter-text">Loading love... 💕</p>
+    </div>
+
+    <div class="love-level-container">
+      <button class="love-level-btn" id="loveLevelBtn" onclick="showLoveLevel()">
+        💕 Seberapa besar sayang kamu dengan Zaki 💕
+      </button>
+      <div class="percentage-selection" id="percentageSelection">
+        <h3>Pilih persentase kesayanganmu:</h3>
+        <div class="percentage-grid">
+          <button class="percentage-btn" onclick="selectPercentage(0)">0%</button>
+          <button class="percentage-btn" onclick="selectPercentage(10)">10%</button>
+          <button class="percentage-btn" onclick="selectPercentage(20)">20%</button>
+          <button class="percentage-btn" onclick="selectPercentage(30)">30%</button>
+          <button class="percentage-btn" onclick="selectPercentage(40)">40%</button>
+          <button class="percentage-btn" onclick="selectPercentage(50)">50%</button>
+          <button class="percentage-btn" onclick="selectPercentage(60)">60%</button>
+          <button class="percentage-btn" onclick="selectPercentage(70)">70%</button>
+          <button class="percentage-btn" onclick="selectPercentage(80)">80%</button>
+          <button class="percentage-btn" onclick="selectPercentage(90)">90%</button>
+          <button class="percentage-btn" onclick="selectPercentage(100)">100%</button>
+        </div>
+      </div>
+      <div class="love-level-display" id="loveLevelDisplay"></div>
+    </div>
+
+    <div class="photo-gallery-container">
+      <button class="photo-gallery-btn" onclick="openPhotoGallery()">
+        📸 Foto Kenangan 💕
+      </button>
+    </div>
+
+    <!-- Photo Modal -->
+    <div class="photo-modal" id="photoModal">
+      <div class="photo-content">
+        <button class="photo-close" onclick="closePhotoGallery()">&times;</button>
+        <button class="photo-nav photo-prev" onclick="prevPhoto()">&#8249;</button>
+        <img id="currentPhoto" src="" alt="Foto kita">
+        <button class="photo-nav photo-next" onclick="nextPhoto()">&#8250;</button>
+        <div class="photo-counter" id="photoCounter"></div>
+      </div>
+    </div>
+
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Email Form Section -->
+    <div class="email-form-container" id="emailFormContainer" style="display: none;">
+      <h3>📧 Kirim Jawaban ke Email</h3>
+      <div class="response-summary" id="responseSummary"></div>
+      <button class="send-email-btn" onclick="sendToEmail()">
+        📨 Kirim ke zakizaki628194@gmail.com
+      </button>
+      <div class="email-status" id="emailStatus"></div>
+    </div>
+
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
